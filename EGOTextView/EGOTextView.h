@@ -112,10 +112,10 @@ extern NSString * const EGOTextAttachmentPlaceholderString;
 @property(nonatomic) UIReturnKeyType returnKeyType;
 @property(nonatomic) BOOL enablesReturnKeyAutomatically;
 
-@property(nonatomic,assign) id <EGOTextViewDelegate> delegate;
+@property(nonatomic,weak) id <EGOTextViewDelegate> delegate;
 @property(nonatomic,copy) NSAttributedString *attributedString;
 @property(nonatomic,copy) NSString *text;
-@property(nonatomic,retain) UIFont *font; // ignored when attributedString is not nil
+@property(nonatomic,strong) UIFont *font; // ignored when attributedString is not nil
 @property(nonatomic,getter=isEditable) BOOL editable; //default YES
 @property(nonatomic) BOOL correctable; //default YES
 @property(nonatomic) NSRange selectedRange;
