@@ -41,11 +41,11 @@ typedef enum {
 
 // MARK: Text attachment helper functions
 static void AttachmentRunDelegateDealloc(void *refCon) {
-    [(id)refCon release];
+    [(__bridge id)refCon release];
 }
 
 static CGSize AttachmentRunDelegateGetSize(void *refCon) {
-    id <EGOTextAttachmentCell> cell = refCon;
+    id <EGOTextAttachmentCell> cell = (__bridge id<EGOTextAttachmentCell>)(refCon);
     if ([cell respondsToSelector: @selector(attachmentSize)]) {
         return [cell attachmentSize];
     } else {
@@ -364,7 +364,7 @@ static CGFloat AttachmentRunDelegateGetWidth(void *refCon) {
     [oldFont release];
 
     CTFontRef ctFont = CTFontCreateWithName((CFStringRef) self.font.fontName, self.font.pointSize, NULL);
-    NSDictionary *dictionary = [[NSDictionary alloc] initWithObjectsAndKeys:(id)ctFont, (NSString *)kCTFontAttributeName, (id)[UIColor blackColor].CGColor, kCTForegroundColorAttributeName, nil];
+    NSDictionary *dictionary = [[NSDictionary alloc] initWithObjectsAndKeys:(__bridge id)ctFont, (NSString *)kCTFontAttributeName, (id)[UIColor blackColor].CGColor, kCTForegroundColorAttributeName, nil];
     self.defaultAttributes = dictionary;
     [dictionary release];
     CFRelease(ctFont);
@@ -620,7 +620,7 @@ static CGFloat AttachmentRunDelegateGetWidth(void *refCon) {
         for (CFIndex runsIndex = 0; runsIndex < runsCount; runsIndex++) {
             CTRunRef run = CFArrayGetValueAtIndex(runs, runsIndex);
             CFDictionaryRef attributes = CTRunGetAttributes(run);
-            id <EGOTextAttachmentCell> attachmentCell = [(id)attributes objectForKey: EGOTextAttachmentAttributeName];
+            id <EGOTextAttachmentCell> attachmentCell = [(__bridge id)attributes objectForKey: EGOTextAttachmentAttributeName];
             if (attachmentCell != nil && [attachmentCell respondsToSelector: @selector(attachmentSize)] && [attachmentCell respondsToSelector: @selector(attachmentDrawInRect:)]) {
                 CGPoint position;
                 CTRunGetPositions(run, CFRangeMake(0, 1), &position);
@@ -1588,7 +1588,7 @@ static CGFloat AttachmentRunDelegateGetWidth(void *refCon) {
 
             // the retain here is balanced by the release in the Dealloc function
             CTRunDelegateRef runDelegate = CTRunDelegateCreate(&callbacks, [value retain]);
-            [mutableAttributedString addAttribute: (NSString *)kCTRunDelegateAttributeName value: (id)runDelegate range:range];
+            [mutableAttributedString addAttribute: (NSString *)kCTRunDelegateAttributeName value: (__bridge id)runDelegate range:range];
             CFRelease(runDelegate);
         }
     }];

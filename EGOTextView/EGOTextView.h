@@ -66,7 +66,7 @@ extern NSString * const EGOTextAttachmentPlaceholderString;
 @private
     NSMutableAttributedString          *_mutableAttributedString;
     NSDictionary                       *_markedTextStyle;
-    id <UITextInputDelegate>           _inputDelegate;
+    //id <UITextInputDelegate>           _inputDelegate;
     UITextInputStringTokenizer         *_tokenizer;
     UITextChecker                      *_textChecker;
     UILongPressGestureRecognizer       *_longPress;
