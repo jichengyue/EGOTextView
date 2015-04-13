@@ -28,6 +28,7 @@
 		03FF5EEE135CA4DA00268656 /* EGOTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 03FF5EED135CA4DA00268656 /* EGOTextView.m */; };
 		03FF5EFB135CA6AC00268656 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03FF5EFA135CA6AC00268656 /* QuartzCore.framework */; };
 		03FF5EFD135CA6B200268656 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03FF5EFC135CA6B200268656 /* CoreText.framework */; };
+		29E0A7FE1ADBCD7A004EACCA /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 29E0A7FD1ADBCD7A004EACCA /* Default-568h@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +59,7 @@
 		03FF5EED135CA4DA00268656 /* EGOTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EGOTextView.m; sourceTree = "<group>"; };
 		03FF5EFA135CA6AC00268656 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		03FF5EFC135CA6B200268656 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
+		29E0A7FD1ADBCD7A004EACCA /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +104,7 @@
 		03FF5EBC135CA49D00268656 = {
 			isa = PBXGroup;
 			children = (
+				29E0A7FD1ADBCD7A004EACCA /* Default-568h@2x.png */,
 				03FF5EEB135CA4AC00268656 /* EGOTextView */,
 				03FF5ED1135CA49D00268656 /* EGOTextView_Demo */,
 				03FF5ECA135CA49D00268656 /* Frameworks */,
@@ -191,6 +194,7 @@
 		03FF5EBE135CA49D00268656 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastUpgradeCheck = 0630;
 			};
 			buildConfigurationList = 03FF5EC1135CA49D00268656 /* Build configuration list for PBXProject "EGOTextView_Demo" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -223,6 +227,7 @@
 				03C94662135E90E000EF024B /* drag-dot@2x.png in Resources */,
 				03644E9213611C720015EC74 /* magnifier-ranged-hi@2x.png in Resources */,
 				03644E9313611C720015EC74 /* magnifier-ranged-lo-stemless@2x.png in Resources */,
+				29E0A7FE1ADBCD7A004EACCA /* Default-568h@2x.png in Resources */,
 				03644E9413611C720015EC74 /* magnifier-ranged-lo@2x.png in Resources */,
 				03644E9513611C720015EC74 /* magnifier-ranged-mask@2x.png in Resources */,
 				031317AE13D50A5F00F8B414 /* MainWindow-iPad.xib in Resources */,
@@ -284,7 +289,6 @@
 		03FF5EE6135CA49E00268656 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -294,6 +298,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 4.2;
+				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -301,7 +306,6 @@
 		03FF5EE7135CA49E00268656 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_VERSION = com.apple.compilers.llvmgcc42;

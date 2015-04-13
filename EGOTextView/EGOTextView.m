@@ -40,9 +40,9 @@ typedef enum {
 } EGOSelectionType;
 
 // MARK: Text attachment helper functions
-static void AttachmentRunDelegateDealloc(void *refCon) {
-    (__bridge id)refCon;
-}
+//static void AttachmentRunDelegateDealloc(void *refCon) {
+//    (__bridge id)refCon;
+//}
 
 static CGSize AttachmentRunDelegateGetSize(void *refCon) {
     id <EGOTextAttachmentCell> cell = (__bridge id<EGOTextAttachmentCell>)(refCon);
@@ -351,7 +351,7 @@ static CGFloat AttachmentRunDelegateGetWidth(void *refCon) {
 
 - (void)setFont:(UIFont *)font {
 
-    UIFont *oldFont = _font;
+   // UIFont *oldFont = _font;
     _font = font;
 
     CTFontRef ctFont = CTFontCreateWithName((CFStringRef) self.font.fontName, self.font.pointSize, NULL);
@@ -1562,14 +1562,14 @@ static CGFloat AttachmentRunDelegateGetWidth(void *refCon) {
 
             CTRunDelegateCallbacks callbacks = {
                 .version = kCTRunDelegateVersion1,
-                .dealloc = AttachmentRunDelegateDealloc,
+//                .dealloc = AttachmentRunDelegateDealloc,
                 .getAscent = AttachmentRunDelegateGetDescent,
                 //.getDescent = AttachmentRunDelegateGetDescent,
                 .getWidth = AttachmentRunDelegateGetWidth
             };
 
             // the retain here is balanced by the release in the Dealloc function
-            CTRunDelegateRef runDelegate = CTRunDelegateCreate(&callbacks, CFBridgingRetain(value));
+            CTRunDelegateRef runDelegate = CTRunDelegateCreate(&callbacks, (__bridge void *)(value));
             [mutableAttributedString addAttribute: (NSString *)kCTRunDelegateAttributeName value: (__bridge id)runDelegate range:range];
             CFRelease(runDelegate);
         }
@@ -2468,8 +2468,8 @@ static const NSTimeInterval kBlinkRate = 1.0;
 @synthesize selectionType=_selectionType;
 @synthesize type=_type;
 
-static const CGFloat kLoupeScale = 1.2f;
-static const CGFloat kMagnifyScale = 1.0f;
+//static const CGFloat kLoupeScale = 1.2f;
+//static const CGFloat kMagnifyScale = 1.0f;
 static const NSTimeInterval kDefaultAnimationDuration = 0.15f;
 
 - (id)initWithFrame:(CGRect)frame {
