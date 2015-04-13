@@ -58,7 +58,6 @@ extern NSString * const EGOTextAttachmentPlaceholderString;
 
 - (CGSize) attachmentSize;
 - (void) attachmentDrawInRect: (CGRect)r;
-
 @end
 
 @class EGOCaretView, EGOContentView, EGOTextWindow, EGOMagnifyView, EGOSelectionView;
