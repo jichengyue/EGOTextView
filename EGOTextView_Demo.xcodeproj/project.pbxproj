@@ -328,7 +328,7 @@
 				GCC_PREFIX_HEADER = "EGOTextView_Demo/EGOTextView_Demo-Prefix.pch";
 				GCC_VERSION = "";
 				INFOPLIST_FILE = "EGOTextView_Demo/EGOTextView_Demo-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
@@ -345,7 +345,7 @@
 				GCC_PREFIX_HEADER = "EGOTextView_Demo/EGOTextView_Demo-Prefix.pch";
 				GCC_VERSION = "";
 				INFOPLIST_FILE = "EGOTextView_Demo/EGOTextView_Demo-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
