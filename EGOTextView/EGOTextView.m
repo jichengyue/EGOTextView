@@ -534,6 +534,11 @@ static CGFloat AttachmentRunDelegateGetWidth(void *refCon) {
 
 }
 
+- (NSArray *)selectionRectsForRange:(UITextRange *)range
+{
+    return @[];
+}
+
 - (void)drawBoundingRangeAsSelection:(NSRange)selectionRange cornerRadius:(CGFloat)cornerRadius {
 
     if (selectionRange.length == 0 || selectionRange.location == NSNotFound) {
